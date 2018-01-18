@@ -1,0 +1,27 @@
+{
+  "name": "react-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon --watch server --exec babel-node -- server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdinteractive/react-chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdinteractive/react-chat/issues"
+  },
+  "homepage": "https://github.com/bdinteractive/react-chat#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "express": "^4.16.2",
+    "nodemon": "^1.14.11",
+    "webpack": "^3.10.0"
+  }
+}
