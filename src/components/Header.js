@@ -1,4 +1,9 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from 'react-router-dom';
 import Bootstrap from "bootstrap";
 
 export class Header extends React.Component {
@@ -13,18 +18,18 @@ export class Header extends React.Component {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">Website Backend</a>
+                        <Link to="/" className="navbar-brand" href="#">Website Backend</Link>
                     </div>
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav navbar-right">
-                            <li><a href="#">Dashboard</a></li>
+                            <li><Link to="/">Dashboard</Link></li>
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <span className="glyphicon glyphicon-th" aria-hidden="true"></span>
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Payouts</a></li>
+                                    <li><Link to="/orders">Orders</Link></li>
+                                    <li><Link to="/payouts">Payouts</Link></li>
                                     <li><a href="#">Reported Content</a></li>
                                     <li><a href="#">Fans (Users)</a></li>
                                     <li><a href="#">Talent</a></li>
