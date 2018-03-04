@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Header } from "../components/Header";
 import { Login } from "../views/Login";
@@ -12,9 +12,9 @@ class App extends React.Component {
             <Router>
                 <div>
                     <div className="container">
-                        {/* <Route path="/" component={Header} /> */}
                         <Route exact path="/" component={Login} />
-                        <Route exact path="/app" component={Home} />
+                        <Route path="/app" component={Header} />
+                        <Route exact path="/app/dashboard" component={Home} />
                     </div>
                 </div>
             </Router>
