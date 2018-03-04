@@ -1,10 +1,10 @@
 import React from "react";
 
-export class Home extends React.Component {
+export class PromoCode extends React.Component {
     render() {
         return(
             <div>
-                <div>This is the Home Dashboard</div>
+                <div>This is Promo Code</div>
             </div>
         );
     }

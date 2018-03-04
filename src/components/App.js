@@ -1,10 +1,10 @@
 import React from "react";
 
-export class Home extends React.Component {
+export class App extends React.Component {
     render() {
         return(
             <div>
-                <div>This is the Home Dashboard</div>
+                <h1>Hello World! App</h1>
             </div>
         );
     }

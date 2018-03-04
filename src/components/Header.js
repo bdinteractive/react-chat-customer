@@ -1,9 +1,5 @@
 import React from "react";
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Bootstrap from "bootstrap";
 
 export class Header extends React.Component {
@@ -30,13 +26,13 @@ export class Header extends React.Component {
                                 <ul className="dropdown-menu">
                                     <li><Link to="/orders">Orders</Link></li>
                                     <li><Link to="/payouts">Payouts</Link></li>
-                                    <li><a href="#">Reported Content</a></li>
-                                    <li><a href="#">Fans (Users)</a></li>
-                                    <li><a href="#">Talent</a></li>
-                                    <li><a href="#">One-On-One ChatWith</a></li>
-                                    <li><a href="#">Promo Code</a></li>
-                                    <li><a href="#">Ads</a></li>
-                                    <li><a href="#">Featured Content</a></li>
+                                    <li><Link to="/reported-content">Reported Content</Link></li>
+                                    <li><Link to="/fans">Fans (Users)</Link></li>
+                                    <li><Link to="/talent">Talent</Link></li>
+                                    <li><Link to="/one-on-one">One-On-One ChatWith</Link></li>
+                                    <li><Link to="/promo-code">Promo Code</Link></li>
+                                    <li><Link to="/ads">Ads</Link></li>
+                                    <li><Link to="/featured-content">Featured Content</Link></li>
                                 </ul>
                             </li>
                             <li><a href="#"><span className="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
