@@ -20,7 +20,11 @@ export class LoginForm extends React.Component {
         .post('http://www.api.getchatwith.com/api/AuthenticateAppAdmin')
         .send({EmailAddress: this.state.username, Password: this.state.password})
         .end((Error, Response) => {
-            if(Error) { this.setState({errorMessage: "Authentication Failed"}); return; }
+            console.log('error', Error);
+            if(Error) { 
+                this.setState({errorMessage: "Authentication Failed"});
+                return;
+            }
             localStorage.setItem('token', Response.body.Response.Token);
             this.props.onSuccessfulLogin();
         });

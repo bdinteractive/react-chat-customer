@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 export class Talent extends React.Component {
     render() {
@@ -10,8 +10,12 @@ export class Talent extends React.Component {
                 </div>
 
                 <div className="col-12">
-                    <div className="btn-group" role="group">
-                        <Link className="btn btn-default btn-sm" to="/talent-add">Add Talent</Link>
+                    <div className="panel panel-default">
+                        <div className="panel-body text-right">
+                            <div className="btn-group" role="group">
+                                <Link className="btn btn-info btn-sm" to="/app/talent-add">Add Talent</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

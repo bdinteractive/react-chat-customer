@@ -1,7 +1,51 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import superagent from "superagent";
 
 export class TalentAdd extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            emailAddress: "",
+            password: "",
+            Name: "",
+            categoryId: "",
+            errorMessage: ""
+        }
+    }
+    handleEmailAddressChanged(event) {
+        this.setState({emailAddress: event.target.value});
+    }
+    handleNameChanged(event) {
+        this.setState({name: event.target.value});
+    }
+    handlePasswordChanged(event) {
+        this.setState({password: event.target.value});
+    }
+    submitForm(event) {
+        console.log('Submit Form');
+        event.preventDefault();
+        superagent
+        .post('http://www.api.getchatwith.com/api/CreateAppTalent')
+        .send({
+            EmailAddress: this.state.emailAddress,
+            Password: this.state.password,
+            Name: this.state.name,
+            CategoryId: this.state.categoryId
+        })
+        .end((err, res) => {
+            // console.log('err ', err);
+            // console.log('res ', res);
+            // console.log('res.body.Error ', res.body.Error);
+            if(res.body.Error) {
+                // console.log('Error!!! ', res.body.Error);
+                this.setState({errorMessage: res.body.Response});
+                return;
+            }
+            console.log('Res', res.body.Response);
+            this.props.history.push('/app/talent-added');
+        });
+    }
     render() {
         return(
             <div className="row">
@@ -10,17 +54,34 @@ export class TalentAdd extends React.Component {
                 </div>
 
                 <div className="col-12">
-                    <div className="btn-group" role="group">
-                        <Link className="btn btn-default btn-sm" to="/talent">Cancel and Return to Talent</Link>
+                    <div className="panel panel-default">
+                        <div className="panel-body text-right">
+                            <div className="btn-group" role="group">
+                                <Link className="btn btn-danger btn-sm" to="/app/talent">Cancel</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                {this.state.errorMessage &&
+                    <div className="alert alert-danger">
+                        <strong>Error:</strong> {this.state.errorMessage}
+                    </div>
+                }
+
                 <div className="col-12">
-                    <form>
+                    <form onSubmit={this.submitForm.bind(this)}>
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Talent First Name</label>
                             <div className="col-sm-10">
-                                <input className="form-control" type="text" id="talent_first_name" placeholder="Enter First Name"/>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="talent_first_name"
+                                    placeholder="Enter First Name"
+                                    value={this.state.name}
+                                    onChange={this.handleNameChanged.bind(this)}
+                                />
                             </div>
                         </div>
 
@@ -34,14 +95,28 @@ export class TalentAdd extends React.Component {
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Talent Email Address</label>
                             <div className="col-sm-10">
-                                <input type="email" className="form-control" id="talent_email" placeholder="Enter Email"/>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    id="talent_email"
+                                    placeholder="Enter Email"
+                                    value={this.state.emailAddress}
+                                    onChange={this.handleEmailAddressChanged.bind(this)}
+                                />
                             </div>
                         </div>
 
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label">Talent Password</label>
                             <div className="col-sm-10">
-                                <input className="form-control" type="password" id="talent_password" placeholder="Enter Password"/>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="talent_password"
+                                    placeholder="Enter Password"
+                                    value={this.state.password}
+                                    onChange={this.handlePasswordChanged.bind(this)}
+                                />
                             </div>
                         </div>
 
@@ -152,8 +227,14 @@ export class TalentAdd extends React.Component {
                             </div>
                         </div>
 
-                        <button type="submit" className="btn btn-danger">Cancel</button>
+                        {this.state.errorMessage &&
+                            <div className="alert alert-danger">
+                                <strong>Error:</strong> {this.state.errorMessage}
+                            </div>
+                        }
+                        <button type="text" className="btn btn-danger">Cancel</button>
                         <button type="submit" className="btn btn-primary">Submit</button>
+                        
                     </form>
                 </div>
 

@@ -1,7 +1,14 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import superagent from "superagent";
 
 export class Home extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            username: "Brad"
+        }
+    }
     isAuthenticated() {
         const token = localStorage.getItem('token');
         return token && token.length > 10;
@@ -12,7 +19,9 @@ export class Home extends React.Component {
             <div className="row">
                 {!isAlreadyAuthentacated ? <Redirect to={{pathname: '/'}}/> : (
                     <div className="col-12">
-                        <h5>You are Logged In</h5>
+                        <div className="panel panel-default">
+                            <div className="panel-body">Welcome {this.state.username}</div>
+                        </div>
                         <h1>Dashboard</h1>
                     </div>
                 )}
