@@ -69,11 +69,11 @@ export class TalentAdd extends React.Component {
                     </div>
                 }
 
-                <div className="col-12">
+                <div className="col-md-offset-3 col-md-7">
                     <form onSubmit={this.submitForm.bind(this)}>
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Talent First Name</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Talent First Name</label>
+                            <div className="col-sm-12">
                                 <input
                                     type="text"
                                     className="form-control"
@@ -86,15 +86,15 @@ export class TalentAdd extends React.Component {
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Talent Last Name</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Talent Last Name</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="talent_last_name" placeholder="Enter Last Name"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Talent Email Address</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Talent Email Address</label>
+                            <div className="col-sm-12">
                                 <input
                                     type="email"
                                     className="form-control"
@@ -107,8 +107,8 @@ export class TalentAdd extends React.Component {
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Talent Password</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Talent Password</label>
+                            <div className="col-sm-12">
                                 <input
                                     type="password"
                                     className="form-control"
@@ -121,15 +121,15 @@ export class TalentAdd extends React.Component {
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Talent Birthdate</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Talent Birthdate</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="talent_birthdate" placeholder="Enter Birthdate"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Talent Gender</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Talent Gender</label>
+                            <div className="col-sm-12">
                                 <div className="form-check">
                                     <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"/>
                                     <label className="form-check-label" htmlFor="gridRadios1">&nbsp;&nbsp;Female</label>
@@ -142,36 +142,36 @@ export class TalentAdd extends React.Component {
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Talent Known For (Highlights 2 roles for talent)</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Talent Known For (Highlights 2 roles for talent)</label>
+                            <div className="col-sm-12">
                             <textarea className="form-control" id="talent_highlights" rows="3"></textarea>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Manager First Name</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Manager First Name</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="manager_first_name" placeholder="Enter First Name"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Manager Last Name</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Manager Last Name</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="manager_last_name" placeholder="Enter Last Name"/>
                             </div>
                         </div>
                         
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Manager Email</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Manager Email</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="email" id="manager_email" placeholder="Enter Email Address"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Manager Phone</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Manager Phone</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="manager_phone" placeholder="Enter Phone Number"/>
                             </div>
                         </div>
@@ -179,50 +179,50 @@ export class TalentAdd extends React.Component {
                         <h3>For Checks</h3>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Mailing Name</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Mailing Name</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="mail_name" placeholder="Enter Mailing Name"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Address Line 1</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Address Line 1</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="mail_address_line_1" placeholder="Enter Address"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Address Line 2</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Address Line 2</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="mail_address_line_2" placeholder="Enter Address"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">City</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">City</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="mail_city" placeholder="Enter City"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">State</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">State</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="mail_state" placeholder="Enter State"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Zip Code</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Zip Code</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="mail_zip_code" placeholder="Enter Zip Code"/>
                             </div>
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-2 col-form-label">Country</label>
-                            <div className="col-sm-10">
+                            <label className="col-sm-12 col-form-label">Country</label>
+                            <div className="col-sm-12">
                                 <input className="form-control" type="text" id="mail_country" placeholder="Enter Country"/>
                             </div>
                         </div>
@@ -232,8 +232,14 @@ export class TalentAdd extends React.Component {
                                 <strong>Error:</strong> {this.state.errorMessage}
                             </div>
                         }
-                        <button type="text" className="btn btn-danger">Cancel</button>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+
+                        <div>
+                            <p className="text-center">
+                            <Link className="btn btn-danger" to="/app/talent">Cancel</Link>
+                                &nbsp;&nbsp;
+                                <button type="submit" className="btn btn-primary btn-lg">Submit</button>
+                            </p>
+                        </div>
                         
                     </form>
                 </div>
