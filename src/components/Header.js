@@ -9,15 +9,15 @@ export class Header extends React.Component {
         localStorage.removeItem('token');
         this.forceUpdate();
     }
-    isAuthenticated() {
-        const token = localStorage.getItem('token');
-        return token && token.length > 10;
-    }
+    // isAuthenticated() {
+    //     const token = localStorage.getItem('token');
+    //     return token && token.length > 10;
+    // }
     render() {
-        const isAlreadyAuthentacated = this.isAuthenticated();
+        // const isAlreadyAuthentacated = this.isAuthenticated();
         return(
             <div className="row">
-                {!isAlreadyAuthentacated ? <Redirect to={{pathname: '/'}}/> : (
+                {/* {!isAlreadyAuthentacated ? <Redirect to={{pathname: '/'}}/> : ( */}
                     <div className="col-12">
                         <nav className="navbar navbar-default">
                             <div className="container">
@@ -28,25 +28,17 @@ export class Header extends React.Component {
                                         <span className="icon-bar"></span>
                                         <span className="icon-bar"></span>
                                     </button>
-                                    <Link to="/" className="navbar-brand">ChatWith Management Console</Link>
+                                    <Link to="/" className="navbar-brand">ChatWith Welcome Fan</Link>
                                 </div>
                                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul className="nav navbar-nav navbar-right">
-                                        <li><Link to="/">Dashboard</Link></li>
+                                        <li><Link to="/">Home</Link></li>
                                         <li className="dropdown">
                                             <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                 <span className="glyphicon glyphicon-th" aria-hidden="true"></span>
                                             </a>
                                             <ul className="dropdown-menu">
                                                 <li><Link to="/app/orders">Orders</Link></li>
-                                                <li><Link to="/app/payouts">Payouts</Link></li>
-                                                <li><Link to="/app/reported-content">Reported Content</Link></li>
-                                                <li><Link to="/app/fans">Fans (Users)</Link></li>
-                                                <li><Link to="/app/talent">Talent</Link></li>
-                                                <li><Link to="/app/one-on-one">One-On-One ChatWith</Link></li>
-                                                <li><Link to="/app/promo-code">Promo Code</Link></li>
-                                                <li><Link to="/app/ads">Ads</Link></li>
-                                                <li><Link to="/app/featured-content">Featured Content</Link></li>
                                             </ul>
                                         </li>
                                         <li><a href="#" onClick={this.handleLogout.bind(this)}><span className="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
@@ -55,7 +47,7 @@ export class Header extends React.Component {
                             </div>
                         </nav>
                     </div>
-                )}
+                {/* )} */}
             </div>
         );
     }
