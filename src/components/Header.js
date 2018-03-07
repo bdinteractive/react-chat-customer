@@ -28,19 +28,15 @@ export class Header extends React.Component {
                                         <span className="icon-bar"></span>
                                         <span className="icon-bar"></span>
                                     </button>
-                                    <Link to="/" className="navbar-brand">ChatWith Welcome Fan</Link>
+                                    {/* <Link to="/" className="navbar-brand">Your Subscriptions</Link> */}
                                 </div>
                                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul className="nav navbar-nav">
+                                        <li><Link to="/app">Home</Link></li>
+                                        <li><Link to="/">Account</Link></li>
+                                        <li><Link to="/">Cart</Link></li>
+                                    </ul>
                                     <ul className="nav navbar-nav navbar-right">
-                                        <li><Link to="/">Home</Link></li>
-                                        <li className="dropdown">
-                                            <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                <span className="glyphicon glyphicon-th" aria-hidden="true"></span>
-                                            </a>
-                                            <ul className="dropdown-menu">
-                                                <li><Link to="/app/orders">Orders</Link></li>
-                                            </ul>
-                                        </li>
                                         <li><a href="#" onClick={this.handleLogout.bind(this)}><span className="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                                     </ul>
                                 </div>

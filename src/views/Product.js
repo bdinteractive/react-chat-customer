@@ -2,16 +2,14 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import superagent from "superagent";
 
-export class Talent extends React.Component {
+export class Product extends React.Component {
     constructor() {
         super();
         this.state = {
-            talentId: "8F94015F72CF48BC9017FB1E1BC4B0E2",
-            products: {}
         }
     }
     componentDidMount() {
-        this.getProducts();
+        // this.getProducts();
     }
     getProducts() {
         superagent
@@ -38,21 +36,20 @@ export class Talent extends React.Component {
             <div className="row">
                 {/* {!isAlreadyAuthentacated ? <Redirect to={{pathname: '/'}}/> : ( */}
                     <div className="col-12">
-                        <h1>Talent {this.props.location.state.talentName}</h1>
-                        <ul>
+                        <h1>Product {this.props.location.state.productName}</h1>
+                        {/* <ul>
                             {Object.keys(this.state.products).map(i => (
                                 <li key={i}>
                                     <Link 
                                         to={{
-                                            pathname: "/app/product",
-                                            state: {productName: this.state.products[i].ProductDescription}
+                                            pathname: "/app/product"
                                         }}
                                     >
                                         {this.state.products[i].ProductDescription}
                                     </Link>
                                 </li>
                             ))}
-                        </ul>
+                        </ul> */}
                     </div>
                 {/* )} */}
             </div>
