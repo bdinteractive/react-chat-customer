@@ -15,6 +15,7 @@ export class Home extends React.Component {
     getCategories() {
         superagent
         .get('http://www.api.getchatwith.com/api/GetAppTalentCategories')
+        .set({'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHJpbmciOiJkZWZhdWx0IiwiaWF0IjoxNTIwNzc0MzYxfQ.6evsCd9mU6aLvpS3Ljf1yTRmzz4EG2y25V7EbuA0dgo'})
         .end((err, res) => {
             if(res.body.Error) { 
                 console.log("Error!!!", res.body.Error);
@@ -31,36 +32,28 @@ export class Home extends React.Component {
             ))
         });
     }
-    // isAuthenticated() {
-    //     const token = localStorage.getItem('token');
-    //     return token && token.length > 10;
-    // }
     render() {
-        // const isAlreadyAuthentacated = this.isAuthenticated();
-        // this.getCategories();
         return(
             <div className="row">
-                {/* {!isAlreadyAuthentacated ? <Redirect to={{pathname: '/'}}/> : ( */}
-                    <div className="col-12">
-                        <h1>Your Subscriptions</h1>
-                        <ul>
-                            {Object.keys(this.state.categories).map(i => (
-                                <li key={i}>
-                                    <Link 
-                                        className=""
-                                        to={{
-                                            pathname: "/app/category",
-                                            state: {categoryName: this.state.categories[i].Description}
-                                        }}
-                                    >
-                                        {this.state.categories[i].Description}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                {/* )} */}
-            </div>
+                <div className="col-12">
+                    <h1>Your Subscriptions</h1>
+                    <ul>
+                        {Object.keys(this.state.categories).map(i => (
+                            <li key={i}>
+                                <Link 
+                                    className=""
+                                    to={{
+                                        pathname: "/app/category",
+                                        state: {categoryName: this.state.categories[i].Description}
+                                    }}
+                                >
+                                    {this.state.categories[i].Description}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+        </div>
         );
     }
 }

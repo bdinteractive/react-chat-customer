@@ -9,15 +9,15 @@ export class Header extends React.Component {
         localStorage.removeItem('token');
         this.forceUpdate();
     }
-    // isAuthenticated() {
-    //     const token = localStorage.getItem('token');
-    //     return token && token.length > 10;
-    // }
+    isAuthenticated() {
+        const token = localStorage.getItem('token');
+        return token && token.length > 10;
+    }
     render() {
-        // const isAlreadyAuthentacated = this.isAuthenticated();
+        const isAlreadyAuthentacated = this.isAuthenticated();
         return(
             <div className="row">
-                {/* {!isAlreadyAuthentacated ? <Redirect to={{pathname: '/'}}/> : ( */}
+                {!isAlreadyAuthentacated ? <Redirect to={{pathname: '/'}}/> : (
                     <div className="col-12">
                         <nav className="navbar navbar-default">
                             <div className="container">
@@ -43,7 +43,7 @@ export class Header extends React.Component {
                             </div>
                         </nav>
                     </div>
-                {/* )} */}
+                )}
             </div>
         );
     }

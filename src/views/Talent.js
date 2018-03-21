@@ -16,6 +16,7 @@ export class Talent extends React.Component {
     getProducts() {
         superagent
         .post('http://www.api.getchatwith.com/api/GetProductOptionByTalent')
+        .set({'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHJpbmciOiJkZWZhdWx0IiwiaWF0IjoxNTIwNzc0MzYxfQ.6evsCd9mU6aLvpS3Ljf1yTRmzz4EG2y25V7EbuA0dgo'})
         .send({TalentId: this.state.talentId})
         .end((err, res) => {
             if(res.body.Error) { 

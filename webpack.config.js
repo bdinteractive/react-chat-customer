@@ -10,6 +10,9 @@ var config = {
         filename: "bundle.js",
         publicPath: "/app/"
     },
+    devServer: {
+        port: 3000
+    },
     module: {
         loaders: [
             {
