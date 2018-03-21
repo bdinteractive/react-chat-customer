@@ -51,6 +51,11 @@ export class Talent extends React.Component {
                                     >
                                         {this.state.products[i].ProductDescription}
                                     </Link>
+                                    <ul>
+                                        <li><strong>Price:</strong> ${this.state.products[i].Price}</li>
+                                        <li><strong>Product Option ID:</strong> {this.state.products[i].ProductOptionId}</li>
+                                        <li><strong>First Name:</strong> {this.state.products[i].TalentFirstName}</li>
+                                    </ul>
                                 </li>
                             ))}
                         </ul>
