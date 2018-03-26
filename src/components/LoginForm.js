@@ -22,7 +22,7 @@ export class LoginForm extends React.Component {
         console.log('Submit');
         event.preventDefault();
         superagent
-        .post('http://www.api.getchatwith.com/api/AuthenticateAppUserByEmail')
+        .post('http://www.api.getchatwith.com/auth/AuthenticateAppUserByEmail')
         .send({EmailAddress: this.state.username, Password: this.state.password})
         .end((err, res) => {
             // console.log('err ', err);

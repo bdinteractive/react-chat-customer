@@ -36,12 +36,20 @@ export class Home extends React.Component {
         return(
             <div className="row">
                 <div className="col-12">
-                    <h1>Your Subscriptions</h1>
-                    <ul>
+                    <div className="header">
+                        <h1 className="header__title">Your Subscriptions</h1>
+                        <span className="header__image"></span>
+                        <span className="header__image"></span>
+                        <span className="header__image"></span>
+                    </div>
+                    <div className="header header--primary">
+                        <h1 className="header__title">Categories</h1>
+                    </div>
+                    <ul className="category">
                         {Object.keys(this.state.categories).map(i => (
-                            <li key={i}>
+                            <li className="category__item" key={i}>
                                 <Link 
-                                    className=""
+                                    className="category__link"
                                     to={{
                                         pathname: "/app/category",
                                         state: {categoryName: this.state.categories[i].Description}

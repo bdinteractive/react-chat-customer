@@ -33,12 +33,16 @@ export class Category extends React.Component {
         return(
             <div className="row">
                 <div className="col-12">
-                    <h1>Category {this.props.location.state.categoryName}</h1>
-                    <h3>Talent</h3>
-                    <ul>
+                    <div className="header header--primary">
+                        <h1 className="header__title">Category {this.props.location.state.categoryName}</h1>
+                    </div>
+                    {/* <h3>Talent</h3> */}
+                    <ul className="images">
                         {Object.keys(this.state.talent).map(i => (
-                            <li key={i}>
+                            <li className="images__item" key={i}>
+                                <span className="images__image"></span>
                                 <Link 
+                                    className="images__link"
                                     to={{
                                         pathname: "/app/talent",
                                         state: {talentName: this.state.talent[i].FirstName}
