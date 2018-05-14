@@ -1,6 +1,6 @@
 import React from "react";
 import { LoginForm } from "../components/LoginForm";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import FacebookLogin from 'react-facebook-login';
 
 export class Login extends React.Component {
@@ -22,6 +22,15 @@ export class Login extends React.Component {
                     <div className="col-12 center-block" style={{width: 300 + "px"}}>
                         <h2>Login</h2>
                         <LoginForm onSuccessfulLogin={this.handleSuccessfulLogin.bind(this)} />
+                        <br/>
+                        <Link 
+                            to={{
+                                pathname: "/register",
+                            }}
+                            className="btn btn-default"
+                        >
+                            Register
+                        </Link>
                         <br/><br/>
                         <FacebookLogin
                             appId="1088597931155576"

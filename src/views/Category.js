@@ -6,7 +6,7 @@ export class Category extends React.Component {
     constructor() {
         super();
         this.state = {
-            category: "6BAF3D6162EB4D2B8D9D363C04BB0539",
+            category: "021D71E9EE9E4C849111A438C1322DBD",
             talent: {},
             productTypes: {}
         }
@@ -16,10 +16,11 @@ export class Category extends React.Component {
     }
     getCategories() {
         superagent
-        .post('http://www.api.getchatwith.com/api/GetAppTalentByCategory')
-        .set({'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHJpbmciOiJkZWZhdWx0IiwiaWF0IjoxNTIwNzc0MzYxfQ.6evsCd9mU6aLvpS3Ljf1yTRmzz4EG2y25V7EbuA0dgo'})
+        .post('http://www.api.getchatwith.com/api/super/GetAppTalentByCategory')
+        .set({'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHJpbmciOiJkZWZhdWx0IiwiaWF0IjoxNTI1MzU3NjE5fQ.JJ4X_JomgsVVzv6PPz_8DUbuBC8nXY5F5W7v5ceaFsc'})
         .send({CategoryId: this.state.category})
         .end((err, res) => {
+            console.log(res);
             if(res.body.Error) { 
                 console.log("Error!!!", res.body.Error);
                 this.setState({errorMessage: "Authentication Failed"});
